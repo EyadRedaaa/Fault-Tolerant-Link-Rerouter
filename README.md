@@ -1,5 +1,8 @@
 # Fault-Tolerant-Link-Rerouter
 📌 Project OverviewThe Fault-Tolerant Link Rerouter is an automated network monitoring and recovery system designed to improve network reliability. It acts as a simple self-healing network mechanism that automatically detects network issues and responds without human intervention to maintain service availability through failover. 
+
 ⚙️ How It Works (System Workflow)The system continuously monitors network interface error counts using SNMP.  It checks the router periodically, specifically every 5 seconds.  It retrieves interface error counts using SNMP.  If the errors are below the predefined threshold, the system continues monitoring.  If the number of errors exceeds the threshold (e.g., > 50 errors), it assumes a hardware or link failure has occurred.  Upon detecting high errors, the system automatically establishes an SSH connection to the router.  It updates the routing table to immediately reroute traffic to a backup gateway (e.g., 192.168.2.1).  After the successful failover process is completed, it stops monitoring.
+
 🛠️ Technologies UsedPython   SNMP: utilizing the pysnmp library to communicate with network devices and retrieve data.  SSH: utilizing the paramiko library to connect to and configure the router remotely.  Async Programming: utilizing the asyncio library to enable asynchronous execution for efficient monitoring.  
+
 🎓 Academic ContextThis network automation project is associated with the Faculty of Information Systems and Computer Science at October 6 University.
